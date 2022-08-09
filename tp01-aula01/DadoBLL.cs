@@ -8,6 +8,16 @@ namespace tp01_aula01
 {
     internal class DadoBLL
     {
+
+        public static void conecta()
+        {
+            DadoDal.conecta();
+        }
+
+        public static void desconecta()
+        {
+            DadoDal.desconecta();
+        }
         public static void validaDados(Dado dado, char op)
         {
             Erro.setErro(false);

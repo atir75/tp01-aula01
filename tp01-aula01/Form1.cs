@@ -35,6 +35,13 @@ namespace tp01_aula01
                 MessageBox.Show("Dados inseridos com sucesso!");
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DadoBLL.conecta();
+            if (Erro.getErro())
+                MessageBox.Show(Erro.getMsg());
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -60,6 +67,11 @@ namespace tp01_aula01
                 textBox4.Text = dado.getDado3();
                 textBox5.Text = dado.getDado4();
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DadoBLL.desconecta();
         }
 
         private void button4_Click(object sender, EventArgs e)
